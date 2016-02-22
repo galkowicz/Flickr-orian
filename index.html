@@ -9,20 +9,37 @@
     <title>Amazing Photo Gallery</title>
 </head>
 <body>
+    <div class="row">
 
-    <header> <img src="images/flickr-logo.jpg" class="img-responsive" id="logo-center"></header>
+        <header> <img src="images/flickr-logo.jpg" class="img-responsive" id="logo-center"><input type="button" value="menu" id="btnRefund"  /></h3></header>
 
-    <div id="container">Loading...</div>
+    </div>
+
+    <div class="row">
+
+        <div id="container" class="col-md-8">PHOTO</div>
+
+        <div id="menu" class="col-md-4">
+            <div id="search">
+                <form>
+                    Search: <input type="text" name="searchString"><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div>history</div>
 
 
-    <footer></footer>
+        </div>
 
+    </div>
+
+    <div class="row">
+        <footer> small icons</footer>
+    </div>
 
     <script data-main="scripts/App.js" src="scripts/require.js"></script>
-    <script>
-        require(['App'], function(){
-            require(['models/startFlickrApi']);
-        });
-    </script>
+
 </body>
 </html>

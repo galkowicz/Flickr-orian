@@ -1,7 +1,9 @@
 /**
- * Created by orian.galkowicz on 21/02/2016.
+ * Created by orian.galkowicz on 22/02/2016.
  */
 define(['jquery','underscore', 'backbone'], function ($,_,Backbone) {
+
+
 
     console.log("fetch+search");
 
@@ -29,6 +31,10 @@ define(['jquery','underscore', 'backbone'], function ($,_,Backbone) {
 
         error: function(){}
     });
+
+
+
+
 
 
 });
