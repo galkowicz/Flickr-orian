@@ -15,7 +15,8 @@ requirejs.config({
         dot:"//cdnjs.cloudflare.com/ajax/libs/dot/1.0.3/doT",
         bootsrtap:"//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min",
         text:"//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text",
-        menuview:"//scripts/main-view/menu/menuView"
+        menuView:"scripts/main-view/menu/menuView",
+        barView:"scripts/main-view/header/barView",
     }
 
 });

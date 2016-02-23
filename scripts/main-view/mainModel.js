@@ -19,22 +19,17 @@ define(['jquery','underscore', 'backbone'], function ($,_,Backbone) {
 
     photos.fetch({
         data:{
-            api_key:"808e97046a232c85deaf7aa1735a7026",
-            text:"dogs",
-            format:"json"
-
-        },
-        success: function(response){
-            console.log("success");
-            console.log(response);
-        },
-
-        error: function(){}
+            api_key:'346c2b5529f2926ea20aad4cc8c689fc',
+            text:'dogs',
+            format:'json',
+            nojsoncallback:'1'
+        }
+    }).success(function (res) {
+        console.log('success');
+        console.log(res);
+    }).error(function (error) {
+        console.log(error);
     });
-
-
-
-
 
 
 });
