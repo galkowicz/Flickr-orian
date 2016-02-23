@@ -29,8 +29,8 @@ define(['jquery','underscore', 'backbone','menuView', 'barView'], function ($,_,
         var menuview = new menuView();
         menuview.render();
 
-        //var barview = new barView();
-        //barview.render();
+        var barview = new barView();
+        barview.render();
 
         console.log("main view loaded");
     });
