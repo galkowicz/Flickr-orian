@@ -18,6 +18,7 @@ define(['jquery','underscore', 'backbone'], function ($,_,Backbone) {
     var photos = new Photos();
 
     photos.fetch({
+
         data:{
             api_key:'346c2b5529f2926ea20aad4cc8c689fc',
             text:'dogs',

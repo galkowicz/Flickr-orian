@@ -15,8 +15,9 @@ requirejs.config({
         dot:"//cdnjs.cloudflare.com/ajax/libs/dot/1.0.3/doT",
         bootsrtap:"//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min",
         text:"//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text",
-        menuView:"scripts/main-view/menu/menuView",
-        barView:"scripts/main-view/header/barView",
+        menuView:"scripts/main-view/menu/menu.view",
+        barView:"scripts/main-view/header/bar.view",
+        photosService:"services/fetch.flickr.photos"
     }
 
 });
@@ -24,6 +25,10 @@ requirejs.config({
 // Load the main app module to start the app
 
 require(['App'], function(){
-    require(['scripts/main-view/mainView.js']);
+    require(['scripts/main-view/main.view.js']);
 });
 
+
+
+//  require(['scripts/main-view/main.view.js']);
+//   require(['services/startFlickrApi.js']);
