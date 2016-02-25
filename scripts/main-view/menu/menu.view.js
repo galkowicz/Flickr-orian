@@ -17,7 +17,6 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
         initialize: function () {
             this.photosCollection = new photosService();
 
-            this.searchesHistory = JSON.parse(localStorage.getItem('searchesHistory')) || [];
         },
 
 
@@ -35,10 +34,6 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
         },
 
         saveToLocalStorage : function(searchToHistory){
-            this.searchesHistory = localStorage.getItem()
         }
-
     });
-
-
 });

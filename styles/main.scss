@@ -1,13 +1,13 @@
 
 
 #logo-center{
+  margin: 7rem;
 font-family: Impact;
-font-size: 55px;
+font-size: 20rem;
 font-style: normal;
 font-variant: normal;
 font-weight: bold;
 line-height: 34.3px;
-
 
 }
 
@@ -18,6 +18,9 @@ line-height: 34.3px;
   transition: width 0.4s ease-in-out;
 }
 
+#menu {
+
+}
 ///* When the input field gets focus, change its width to 100% */
 //input[type=text]:focus {
 //  width: 100%;
