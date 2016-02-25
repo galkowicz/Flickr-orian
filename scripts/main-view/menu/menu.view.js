@@ -1,12 +1,13 @@
 /**
  * Created by orian.galkowicz on 22/02/2016.
  */
-define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts/main-view/menu/tmp/menu.html', 'photosService'], function ($, _, Backbone, dot, text, photosService) {
+define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts/main-view/menu/tmp/menu.html', 'ServiceFlickr'], function ($, _, Backbone, dot, text, ServiceFlickr) {
 
 
     return Backbone.View.extend({
 
         el: '#menu',
+
 
         events: {
 
@@ -15,9 +16,8 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
 
 
         initialize: function () {
-            this.photosCollection = new photosService();
-
-            this.searchesHistory = JSON.parse(localStorage.getItem('searchesHistory')) || [];
+          this.photosService = new ServiceFlickr();
+            console.log(this.photosService);
         },
 
 
@@ -28,14 +28,15 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
         },
 
         input_change: function (e) {
+            this.trigger('search');
             var searchString = $(e.currentTarget).val();
             console.log(searchString);
-            this.photosCollection.findPhotos(searchString);
+            this.photosService.getPhotos(searchString);
+
             this.saveToLocalStorage(searchString);
         },
 
         saveToLocalStorage : function(searchToHistory){
-            this.searchesHistory = localStorage.getItem()
         }
 
     });

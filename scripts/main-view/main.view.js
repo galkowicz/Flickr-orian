@@ -11,30 +11,30 @@ define(['jquery','underscore', 'backbone','menuView', 'barView'], function ($,_,
 
         initialize: function(){
 
+            var menuview = new menuView();
+            menuview.render();
+            menuview.on('search', this.searchEvent, this);
+
+            var barview = new barView();
+            barview.render();
+
+
 
 
         },
         render: function(){
 
+        },
+
+        searchEvent: function(){
+            console.log("someone searched");
         }
 
     });
 
     $(document).ready(function() {
-
-
         var mainView = new TheView();
-        mainView.render();
-
-        var menuview = new menuView();
-        menuview.render();
-
-        var barview = new barView();
-        barview.render();
-
         console.log("main view loaded");
     });
-
-
 
 });
