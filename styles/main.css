@@ -1,33 +1,15 @@
-
-
-#logo-center{
-    width: 25em;
-    height: 10em;
-    margin:0 400px 0;
-    position: relative;
-    border: dashed;
-}
-/*#header{*/
-
-    /*background-color: midnightblue;*/
-/*}*/
+#logo-center {
+  margin: 7rem;
+  font-family: Impact;
+  font-size: 20rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 34.3px; }
 
 .input[type=text] {
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out; }
 
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-    width: 100%;
-}
-
-#searchBar{
-    margin: 20px;
-}
-
-#btnMenu {
-
-    /*margin: 48px 0 0 7em;*/
-}
+/*# sourceMappingURL=main.css.map */

@@ -2,7 +2,7 @@
  * Created by orian.galkowicz on 22/02/2016.
  */
 
-define(['jquery','underscore', 'backbone','dot','text!../Orian_Flickr/scripts/main-view/header/barTemplate.html'], function ($,_,Backbone, dot, text) {
+define(['jquery','underscore', 'backbone','dot','text!../Orian_Flickr/scripts/main-view/header/tmp/bar.html'], function ($,_,Backbone, dot, text) {
 
 
     return Backbone.View.extend({
