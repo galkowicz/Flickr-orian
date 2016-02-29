@@ -17,7 +17,8 @@ requirejs.config({
         text:"//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text",
         menuView:"scripts/main-view/menu/menu.view",
         barView:"scripts/main-view/header/bar.view",
-        ServiceFlickr:"services/photo.service"
+        mainPhotoView:"scripts/main-view/photo-main/photo.view",
+        ServiceFlickr:"services/flickr.photo.service"
     }
 
 });

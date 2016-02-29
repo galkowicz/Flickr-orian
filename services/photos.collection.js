@@ -1,64 +1,53 @@
 /**
  * Created by orian.galkowicz on 21/02/2016.
  */
-define(['jquery','underscore', 'backbone','scripts/main-view/photo-main/photo.model'], function ($,_,Backbone,Photo) {
-
+define(['jquery', 'underscore', 'backbone', 'services/photo.model'], function ($, _, Backbone, Photo) {
 
 
     return Backbone.Collection.extend({
 
+        default: {
+            perPage: 20,
+            pageNumber: 1
+        },
+
         model: Photo,
 
-        url: "https://api.flickr.com/services/rest/?method=flickr.photos.search",
+        baseUrl: "https://api.flickr.com/services/rest/?method=flickr.photos.search",
 
+        url: function () {
+            genUrl = this.baseUrl + '&api_key=' + this.api_key + '&format=' + this.format
+                + '&nojsoncallback=' + this.nojsoncallback + '&per_page=' + this.per_page
+                + '&page=' + this.page + '&text=' + this.text;
 
-        fetchPhotos: function (search) {
-
-            var data = {
-                data: {
-                    api_key: '346c2b5529f2926ea20aad4cc8c689fc',
-                    text: search,
-                    format: 'json',
-                    nojsoncallback: '1'
-                }
-            };
-            var that = this;
-            this.fetch(data)
-                .success(function (res) {
-                    console.log('success');
-                    console.log(res);
-                    that.getPhotoUrl();
-
-                }).error(function (error) {
-                console.log(error);
-            });
+            console.log(genUrl);
+            return genUrl;
         },
 
 
-
-        generatePhoto: function(photosJSON){
-
-            var farmId = photosJSON['photos']['photo'][0]['farm'];
-            var serverId =photosJSON['photos']['photo'][0]['server'];
-            var id = photosJSON['photos']['photo'][0]['id'];
-            var secret = photosJSON['photos']['photo'][0]['secret'];
-
-            return new Photo({
-                farmId: farmId,
-                serverId: serverId,
-                id: id,
-                secret: secret
-            })
+        initialize: function (models, options) {
+            this.api_key = options.api_key;
+            this.format = options.format;
+            this.nojsoncallback = options.nojsoncallback;
+            this.per_page = options.per_page;
+            this.page = options.page;
         },
 
-        getPhotoUrl: function (photoModel){
+        parse: function (response) {
+            this.page = response.photos.page;
+            this.perPage = response.photos.perpage;
+            this.total = response.photos.pages;
+            this.imgUrl = "test123";
+            return response.photos.photo;
+        },
 
+        setSearchString: function(search){
+            this.text = search;
+        },
+
+        next: function () {
+            this.page = this.page + 1;
 
         }
-
-
     });
-
-
-
 });

@@ -1,28 +1,43 @@
 
+#menuBtn{
+  margin-top: 89px;
+}
+
 
 #logo-center{
 font-family: Impact;
 font-size: 16rem;
-font-style: normal;
-font-variant: normal;
-font-weight: bold;
-line-height: 34.3px;
-margin: 6rem;
+line-height: 15rem;
+margin: auto;
 
 }
 
+#menu{
+  position: fixed ;
+  right: 0;
+  width: 40rem;
+  height: 60rem;
+  background-color: gray;
+}
 
-.input[type=text] {
+#searchBar[type=text] {
   width: 130px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
-///* When the input field gets focus, change its width to 100% */
-//input[type=text]:focus {
-//  width: 100%;
-//}
-//
-//#searchBar{
-//  margin: 20px;
-//}
+#search {
+  position: relative;
+  left: 2rem;
+  top: 2rem;
+}
+
+#bigPhoto{
+  position: relative;
+  left: 27rem;
+  top: 2rem;
+}
+#btnMenu{
+  padding-right: 10%;
+}
+

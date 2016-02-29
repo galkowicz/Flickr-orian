@@ -3,27 +3,27 @@
  */
 define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts/main-view/menu/tmp/menu.html', 'ServiceFlickr'], function ($, _, Backbone, dot, text, ServiceFlickr) {
 
+    var renderOnOff = true;
 
     return Backbone.View.extend({
 
         el: '#menu',
 
-
         events: {
-
             'change input': 'input_change'
         },
 
 
         initialize: function () {
           this.photosService = new ServiceFlickr();
-            console.log(this.photosService);
+            this.on('renderOnOff',this.onRenderOnOff(),this);
         },
 
 
         render: function () {
 
             this.$el.html(dot.template(text));
+            renderOnOff = true;
             return this;
         },
 
@@ -34,6 +34,17 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
             this.photosService.getPhotos(searchString);
 
             this.saveToLocalStorage(searchString);
+        },
+
+        onRenderOnOff: function () {
+            if (renderOnOff){
+
+                renderOnOff = false;
+            }
+            else{
+
+                renderOnOff = true;
+            }
         },
 
         saveToLocalStorage : function(searchToHistory){

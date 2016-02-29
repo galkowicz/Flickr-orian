@@ -1,7 +1,7 @@
 /**
  * Created by orian.galkowicz on 22/02/2016.
  */
-define(['jquery','underscore', 'backbone','menuView', 'barView'], function ($,_,Backbone,menuView,barView) {
+define(['jquery','underscore', 'backbone','menuView', 'barView','mainPhotoView'], function ($,_,Backbone,menuView,barView,photoView) {
 
 
 
@@ -11,15 +11,15 @@ define(['jquery','underscore', 'backbone','menuView', 'barView'], function ($,_,
 
         initialize: function(){
 
-            var menuview = new menuView();
-            menuview.render();
-            menuview.on('search', this.searchEvent, this);
+            this.menuview = new menuView();
+            this.menuview.render();
+            this.menuview.on('search', this.searchEvent, this);
 
-            var barview = new barView();
-            barview.render();
+            this.barview = new barView();
+            this.barview.on('menuClick', this.menuDisplay, this);
+            this.barview.render();
 
-
-
+            this.mainPhoto = new photoView()
 
         },
         render: function(){
@@ -28,6 +28,11 @@ define(['jquery','underscore', 'backbone','menuView', 'barView'], function ($,_,
 
         searchEvent: function(){
             console.log("someone searched");
+            this.mainPhoto.render();
+        },
+
+        menuDisplay: function(){
+            this.menuview.trigger('renderOnOff');
         }
 
     });

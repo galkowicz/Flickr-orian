@@ -9,11 +9,18 @@ define(['jquery','underscore', 'backbone','dot','text!../Orian_Flickr/scripts/ma
 
         el: '#header',
 
-
+        events:{
+            'click': "menuDisplay"
+        },
         render: function(){
 
             this.$el.html(dot.template(text));
             return this;
+        },
+
+        menuDisplay: function(){
+            console.log("show / hide  menu");
+            this.trigger('menuClick');
         }
 
     });
