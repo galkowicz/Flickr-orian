@@ -1,7 +1,10 @@
 /**
  * Created by orian.galkowicz on 22/02/2016.
  */
-define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts/main-view/menu/tmp/menu.html', 'ServiceFlickr'], function ($, _, Backbone, dot, text, ServiceFlickr) {
+define(['jquery', 'underscore', 'backbone',
+    'dot', 'text!../Orian_Flickr/scripts/main-view/menu/tmpl/menu.html',
+    'ServiceFlickr','scripts/localstorage_manager/localstorage.searches']
+    , function ($, _, Backbone, dot, text, ServiceFlickr, SearchStorage) {
 
     var renderOnOff = true;
 
@@ -14,8 +17,19 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
         },
 
 
+        options:{
+            api_key: '346c2b5529f2926ea20aad4cc8c689fc',
+            text: '',
+            format: 'json',
+            nojsoncallback: '1',
+            per_page: 20,
+            page: 1
+
+        },
+
         initialize: function () {
-          this.photosService = new ServiceFlickr();
+            this.photosService = new ServiceFlickr(this.options);
+            this.searchHistory = new SearchStorage();
             this.on('renderOnOff',this.onRenderOnOff(),this);
         },
 
@@ -28,15 +42,16 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
         },
 
         input_change: function (e) {
-            this.trigger('search');
             var searchString = $(e.currentTarget).val();
             console.log(searchString);
             this.photosService.getPhotos(searchString);
 
-            this.saveToLocalStorage(searchString);
+            this.searchHistory.addToLocalStorage(searchString);
         },
 
         onRenderOnOff: function () {
+
+            console.log("show/hide  in menu view");
             if (renderOnOff){
 
                 renderOnOff = false;

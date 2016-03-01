@@ -3,7 +3,7 @@
  */
 
 
-define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts/main-view/photo-main/tmp/photo.html', 'ServiceFlickr'], function ($, _, Backbone, dot, text, ServiceFlickr) {
+define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts/main-view/photo-main/tmpl/photo.html', 'ServiceFlickr'], function ($, _, Backbone, dot, text, ServiceFlickr) {
 
 
 
