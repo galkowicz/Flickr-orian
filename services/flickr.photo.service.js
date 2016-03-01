@@ -22,10 +22,23 @@ define(['jquery', 'underscore', 'backbone', 'services/photos.collection', 'servi
 
         getPhotos: function (search) {
             photosCollection.setSearchString(search);
-            photosCollection.fetch();
-        },
-        nextPage: function () {
+            photosCollection.fetch().done(function(){
+                console.log("returned data");
+            });
 
+
+                //return new Promise(function (resolve, reject) {
+                //    setTimeout (function () {
+                //            resolve(photosCollection.fetch());
+                //        },5000);
+                //
+                //    // or
+                //    // reject ("Error!");
+                //});
+
+        },
+
+        nextPage: function () {
             photosCollection.next();
             photosCollection.fetch();
         },
