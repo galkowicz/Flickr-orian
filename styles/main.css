@@ -2,12 +2,9 @@
   margin-top: 89px; }
 
 #logo-center {
-  margin: 7rem;
-  font-family: Impact;
-<<<<<<< HEAD
   font-size: 16rem;
   line-height: 15rem;
-  margin: auto; }
+  font-weight: bold; }
 
 #menu {
   position: fixed;
@@ -15,13 +12,6 @@
   width: 40rem;
   height: 60rem;
   background-color: gray; }
-=======
-  font-size: 20rem;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: bold;
-  line-height: 34.3px; }
->>>>>>> 43444b0419481e34371fc83ce3f5f48bf4b68a01
 
 #searchBar[type=text] {
   width: 130px;

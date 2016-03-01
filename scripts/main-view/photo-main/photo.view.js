@@ -25,6 +25,7 @@ define(['jquery', 'underscore', 'backbone', 'dot', 'text!../Orian_Flickr/scripts
         },
 
         render: function(){
+            console.log("render photo");
             this.$el.html(dot.template(text));
             this.renderMain();
             return this;

@@ -27,13 +27,12 @@ define(['jquery', 'underscore', 'backbone',
 
         },
 
-<<<<<<< HEAD
+
         initialize: function () {
             this.photosService = new ServiceFlickr(this.options);
             this.searchHistory = new SearchStorage();
             this.on('renderOnOff',this.onRenderOnOff(),this);
-=======
->>>>>>> 43444b0419481e34371fc83ce3f5f48bf4b68a01
+
         },
 
 
@@ -45,6 +44,7 @@ define(['jquery', 'underscore', 'backbone',
         },
 
         input_change: function (e) {
+            this.trigger('search');
             var searchString = $(e.currentTarget).val();
             console.log(searchString);
             this.photosService.getPhotos(searchString);
