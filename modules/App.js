@@ -17,7 +17,10 @@ requirejs.config({
         text:"//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text",
         menuView:"scripts/main-view/menu/menu.view",
         barView:"scripts/main-view/header/bar.view",
-        photosService:"services/fetch.flickr.photos"
+        mainPhotoView:"scripts/main-view/photo-main/photo.view",
+        footerView:"scripts/main-view/footer/bottom.view",
+        ServiceFlickr:"services/flickr.photo.service",
+        localstorage:"//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min"
     }
 
 });
@@ -27,8 +30,3 @@ requirejs.config({
 require(['App'], function(){
     require(['scripts/main-view/main.view.js']);
 });
-
-
-
-//  require(['scripts/main-view/main.view.js']);
-//   require(['services/startFlickrApi.js']);

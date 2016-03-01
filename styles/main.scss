@@ -1,31 +1,42 @@
 
-
-#logo-center{
-  margin: 7rem;
-font-family: Impact;
-font-size: 20rem;
-font-style: normal;
-font-variant: normal;
-font-weight: bold;
-line-height: 34.3px;
-
+#menuBtn{
+  margin-top: 89px;
 }
 
 
-.input[type=text] {
+#logo-center{
+font-size: 16rem;
+line-height: 15rem;
+font-weight: bold;
+}
+
+#menu{
+  position: fixed ;
+  right: 0;
+  width: 40rem;
+  height: 60rem;
+  background-color: gray;
+}
+
+#searchBar[type=text] {
   width: 130px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
-#menu {
-
+#search {
+  position: relative;
+  left: 2rem;
+  top: 2rem;
 }
-///* When the input field gets focus, change its width to 100% */
-//input[type=text]:focus {
-//  width: 100%;
-//}
-//
-//#searchBar{
-//  margin: 20px;
-//}
+
+#bigPhoto{
+  position: relative;
+  left: 27rem;
+  top: 2rem;
+}
+#btnMenu{
+  padding-right: 10%;
+}
+
+
