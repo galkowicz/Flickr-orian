@@ -44,11 +44,10 @@ define(['jquery', 'underscore', 'backbone',
         },
 
         input_change: function (e) {
-            this.trigger('search');
+            //this.trigger('search');
             var searchString = $(e.currentTarget).val();
             console.log(searchString);
-            this.photosService.getPhotos(searchString);
-
+            this.photosService.getPhotos(searchString);//.then(this.trigger('search'));
             this.searchHistory.addToLocalStorage(searchString);
         },
 

@@ -16,12 +16,24 @@ define(['jquery','underscore', 'backbone','localstorage','scripts/localstorage_m
 
 
         initialize: function(){
-            var retrievedData = localStorage.getItem('searches');
-            counter = retrievedData.substr(retrievedData.length - 1);
+
+            if (localStorage.getItem('searches')) {
+                var retrievedData = localStorage.getItem('searches');
+                //var serachesId = retrievedData.substr(retrievedData.length - 1);
+                counter = retrievedData.slice(-1);
+
+                return counter
+            }
          },
 
-
         addToLocalStorage: function (stringToAdd){
+
+            if (counter == '10'){
+                console.log("localFix");
+                localStorage.setItem('searches', '0');
+
+            }
+
             counter ++;
             this.create({searchString: stringToAdd,id:counter});
          }
